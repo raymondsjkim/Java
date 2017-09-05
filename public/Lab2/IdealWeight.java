@@ -11,10 +11,10 @@ import java.util.Scanner;
 
 public class IdealWeight {
 	public static void main(String[] args) {
-		int male_weight = 106;
-		int female_weight = 100;
 		System.out.println("Enter in you height in feet and inches to calculate your ideal weight.");
 		System.out.println();
+		int male_weight = 106;
+		int female_weight = 100;
 		Scanner scan = new Scanner(System.in); // Create a scanner object.
 		/* Prompt the user to enter in values for height and inches */
 		System.out.print("Please enter your height in feet: ");
