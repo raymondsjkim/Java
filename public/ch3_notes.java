@@ -7,6 +7,8 @@
 */
 
 import java.util.Random;
+import java.util.Scanner;
+import java.text.NumberFormat;
 
 public class ch3_notes {
 
@@ -39,6 +41,11 @@ public class ch3_notes {
 		double y = 4;
 		x = Math.sqrt(y);
 		System.out.println(x);
+		
+		// Number format
+		int x = 40;
+		NumberFormat fmt = NumberFormat.getCurrencyInstance();
+		System.out.println(fmt.format(x)); // output $40.00
 
 	}
 
