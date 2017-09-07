@@ -1,0 +1,23 @@
+
+public class PlusTest {
+
+	public static void main(String[] args) {
+		// string concatenation
+		System.out.println ("This is a long string that is the " +
+		"concatenation of two shorter strings.");
+		// string concatenation with an integer
+		System.out.println ("The first computer was invented about " + 55 +
+		" years ago.");
+		/* If there are no parentheses the expression is evaluated left to right.  */
+		// 8 + 5 will not calculate because it is not surrounded by quotes.
+		System.out.println ("8 plus 5 is " + 8 + 5);
+		// need quotes around calculation if it is on the right
+		System.out.println ("8 plus 5 is " + (8 + 5)) ;
+		// dont need quotes if calculation is on the left.
+		System.out.println (8 + 5 + " equals 8 plus 5."); 	
+		
+		System.out.println(5 + 5 + " robins plus " + (8 + 5) +
+				" canaries is " + (10 + 13) + " birds");
+	}
+
+}
