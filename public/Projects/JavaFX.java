@@ -6,7 +6,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-public class HelloJavaFX extends Application
+public class JavaFX extends Application
 {
     //--------------------------------------------------------------------
     //  Creates and displays two Text objects in a JavaFX window.
