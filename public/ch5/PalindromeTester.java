@@ -1,6 +1,4 @@
 //********************************************************************
-//  PalindromeTester.java       Author: Lewis/Loftus
-//
 //  Demonstrates the use of nested while loops.
 //********************************************************************
 
