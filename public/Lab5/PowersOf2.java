@@ -1,9 +1,11 @@
-// ************************************************************
-// PowersOf2.java
-//
-// Print out as many powers of 2 as the user requests
-//
-// ************************************************************
+/*  
+    Program: PowersOf2.java
+    Author: Raymond Kim
+    Class: CSCI 145
+    Date: 9/12/2017
+    Description: Print out as many powers of 2 as the user requests
+    Exception(s): N/A
+*/
 import java.util.Scanner;
 public class PowersOf2
 {
