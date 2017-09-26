@@ -1,11 +1,14 @@
-// ************************************************************
-// Salary.java
-//
-// Computes the amount of a raise and the new
-// salary for an employee. The current salary
-// and a performance rating (a String: "Excellent",
-// "Good" or "Poor") are input.
-// ************************************************************
+/*  
+    Program: Salary.java
+    Author: Raymond Kim
+    Class: CSCI 145
+    Date: 9/12/2017
+    Description: Computes the amount of a raise and the 
+    		 new salary for an employee. The current salary and a 
+    		 performance rating (a String: "Excellent", "Good" or "Poor") 
+    		 are input.
+    Exception(s): N/A
+*/
 import java.util.Scanner;
 import java.text.NumberFormat;
 public class Salary
