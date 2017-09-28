@@ -1,12 +1,12 @@
 /*  
-    Program: Salary.java
+    Program: Computing a Raise
     Author: Raymond Kim
     Class: CSCI 145
     Date: 9/12/2017
     Description: Computes the amount of a raise and the 
-    		 new salary for an employee. The current salary and a 
-    		 performance rating (a String: "Excellent", "Good" or "Poor") 
-    		 are input.
+    		     new salary for an employee. The current salary and a 
+    		     performance rating (a String: "Excellent", "Good" or "Poor") 
+    		     are input.
     Exception(s): N/A
 */
 import java.util.Scanner;
@@ -26,19 +26,21 @@ public class Salary
 		
 		System.out.print ("Enter the performance rating (Excellent, Good, or Poor): ");
 		rating = scan.next();
-		
+		// determine the raise amount depending on the rating
 		if(rating.equalsIgnoreCase("Excellent")) 
 			raise = currentSalary * 0.06;
 		if(rating.equalsIgnoreCase("Good")) 
 			raise = currentSalary * 0.04;
 		if(rating.equalsIgnoreCase("Poor")) 
 			raise = currentSalary * 0.015;
+
+		//		System.out.println(raise);
 		
 		// Compute the raise using if ...
 		newSalary = currentSalary + raise;
 		
 		// Print the results
-		NumberFormat money = NumberFormat.getCurrencyInstance();
+		NumberFormat money = NumberFormat.getCurrencyInstance(); // currency format
 		System.out.println();
 		System.out.println("Current Salary: " + money.format(currentSalary));
 		System.out.println("Amount of your raise: " + money.format(raise));
