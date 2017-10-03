@@ -40,15 +40,33 @@ public class Rock
 		}
 		//Print computer's play
 		System.out.println("Computer play: " + computerPlay);
-		 
+		
 		//See who won. Use nested ifs instead of &&.
-		if (personPlay.equals(computerPlay))
+		if (personPlay.equals(computerPlay)) {
 			System.out.println("It's a tie!");
-		else if (personPlay.equals("R"))
-			if (computerPlay.equals("S"))
+		}
+		else if (personPlay.equals("R")) {
+			if (computerPlay.equals("S")) {
 				System.out.println("Rock crushes scissors. You win!!");
-			else
-				//... Fill in rest of code
+			}
+			else {
+				System.out.println("Paper beats rock. You lose...");
+			}
+		} 
+		else if (personPlay.equals("S")) {
+			if (computerPlay.equals("R")) {
+				System.out.println("Rock crushes scissors. You lose!!");
+			} else {
+				System.out.println("Scissors beat paper. You win!!");
+			}
+		}
+		else if (personPlay.equals("P")) {
+			if (computerPlay.equals("R")) {
+				System.out.println("Paper beats rock. You win!!");
+			} else {
+				System.out.println("Scissors beat paper. You lose!!");
+			}
+		}
 			
 	}
 }
