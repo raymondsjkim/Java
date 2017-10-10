@@ -40,7 +40,9 @@ public class ChangingPeople
 		System.out.println ("age: " + age + "\tname: " + name + "\n"); 
 		//Make changes
 		Person p3 = new Person (name, age);
-		p2 = p3;
+//		p2 = p3;
+		p2.changeName (name);
+		p2.changeAge (age);
 		name = "Jack";
 		age = 101;
 		p1.changeName (name);
