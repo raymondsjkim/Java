@@ -58,16 +58,18 @@ class Wheel
     //=====================================================================
     public static void spin() {
     	Random rand = new Random();
+    	String color = "";
     	int randNum = rand.nextInt(MAX_POSITIONS) + 1;
     	if(randNum == 11 || randNum == 12) {
     		ballPosition = GREEN; // 00 OR 0
+    		color = "Green";
     	} else if((randNum % 2) == 0) {
     		ballPosition = BLACK; // even numbers
+    		color = "Black";
     	} else if ((randNum % 2) == 1) {
     		ballPosition = RED; // odd numbers
+    		color = "Red";
     	}
-    	System.out.println();
-    	System.out.println(randNum);
-    	System.out.println(ballPosition);
+    	System.out.println("The ball position is at " + randNum + " and the color is " + color);
     }
 }
