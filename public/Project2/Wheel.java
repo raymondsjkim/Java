@@ -1,6 +1,8 @@
 // Class Wheel for CSCI 145 Project 2 Fall 17
 // Modified by: Raymond Kim
 
+import java.util.Random;
+
 //************************************************************************
 //   Class Wheel represents a roulette wheel and its operations.  Its
 //   data and methods are static because there is only one wheel.
@@ -14,7 +16,7 @@ class Wheel
     public final static int NUMBER    =  3;			// number bet
     public final static int MIN_NUM   =  1;			// smallest number to bet
     public final static int MAX_NUM   = 10;			// largest number to bet
-
+    
     // private name constants -- internal use only
     private final static int MAX_POSITIONS = 12;	// number of positions on wheel
     private final static int NUMBER_PAYOFF = 10;	// payoff for number bet
@@ -51,8 +53,21 @@ class Wheel
       			" and " + MAX_NUM);
       	System.out.println();
     }
+    //=====================================================================
+    //  Spin position
+    //=====================================================================
     public static void spin() {
-//    		ballPosition = 3; // WTF DO I DO HERE???
+    	Random rand = new Random();
+    	int randNum = rand.nextInt(12) + 1;
+    	if(randNum == 11 || randNum == 12) {
+    		ballPosition = GREEN; // 00 OR 0
+    	} else if((randNum % 2) == 0) {
+    		ballPosition = BLACK; // even numbers
+    	} else if ((randNum % 2) == 1) {
+    		ballPosition = RED; // odd numbers
+    	}
+    	System.out.println();
+    	System.out.println(randNum);
+    	System.out.println(ballPosition);
     }
 }
-
