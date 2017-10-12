@@ -58,7 +58,7 @@ class Wheel
     //=====================================================================
     public static void spin() {
     	Random rand = new Random();
-    	int randNum = rand.nextInt(12) + 1;
+    	int randNum = rand.nextInt(MAX_POSITIONS) + 1;
     	if(randNum == 11 || randNum == 12) {
     		ballPosition = GREEN; // 00 OR 0
     	} else if((randNum % 2) == 0) {
