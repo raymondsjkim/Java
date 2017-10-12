@@ -59,7 +59,7 @@ class Wheel
     public static void spin() {
     	Random rand = new Random();
     	String color = "";
-    	int randNum = rand.nextInt(MAX_POSITIONS) + 1;
+    	int randNum = rand.nextInt(MAX_POSITIONS) + 1; // random number between 1 and 12
     	if(randNum == 11 || randNum == 12) {
     		ballPosition = GREEN; // 00 OR 0
     		color = "Green";
