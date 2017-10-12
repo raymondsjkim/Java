@@ -51,5 +51,8 @@ class Wheel
       			" and " + MAX_NUM);
       	System.out.println();
     }
+    public static void spin() {
+//    		ballPosition = 3; // WTF DO I DO HERE???
+    }
 }
 
