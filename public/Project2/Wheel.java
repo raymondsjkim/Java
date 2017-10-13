@@ -25,7 +25,7 @@ class Wheel
     // private variables -- internal use only
     private static int ballPosition;				// 00, 0, 1 .. 10
     private static int color;						// GREEN, RED, OR BLACK
-
+    static int wheelNum;
 
     //=====================================================================
     //  Presents welcome message
@@ -57,19 +57,30 @@ class Wheel
     //  Spin position
     //=====================================================================
     public static void spin() {
-    	Random rand = new Random();
-    	String color = "";
-    	int randNum = rand.nextInt(MAX_POSITIONS) + 1; // random number between 1 and 12
-    	if(randNum == 11 || randNum == 12) {
-    		ballPosition = GREEN; // 00 OR 0
-    		color = "Green";
-    	} else if((randNum % 2) == 0) {
-    		ballPosition = BLACK; // even numbers
-    		color = "Black";
-    	} else if ((randNum % 2) == 1) {
-    		ballPosition = RED; // odd numbers
-    		color = "Red";
-    	}
-    	System.out.println("The ball position is at " + randNum + " and the color is " + color);
+    		Random rand = new Random();
+    		String color = "";
+    		int randNum = rand.nextInt(MAX_POSITIONS) + 1; // random number between 1 and 12
+    		wheelNum = randNum;
+	    	if(randNum == 11 || randNum == 12) {
+	    		ballPosition = GREEN; // 00 OR 0
+	    		color = "Green";
+	    	} else if((randNum % 2) == 0) {
+	    		ballPosition = BLACK; // even numbers
+	    		color = "Black";
+	    	} else if ((randNum % 2) == 1) {
+	    		ballPosition = RED; // odd numbers
+	    		color = "Red";
+	    	}
+    		System.out.println("The ball position is at " + randNum + " and the color is " + color);
     }
+    public static int payOff(int betAmount, int typeOfBet, int numBet) {
+    		int amountWon = 0;
+    		if(wheelNum == 11 || wheelNum == 12) {
+    			amountWon = 0;
+    		} else if (wheelNum == numBet) {
+    			amountWon = betAmount * 10;
+    		}
+    		return amountWon;
+    }
+    
 }
