@@ -40,13 +40,14 @@ public class ChangingPeople
 		System.out.println ("age: " + age + "\tname: " + name + "\n"); 
 		//Make changes
 		Person p3 = new Person (name, age);
-//		p2 = p3;
-		p2.changeName (name);
-		p2.changeAge (age);
 		name = "Jack";
 		age = 101;
+		// change person1 to name Jack and age 101
 		p1.changeName (name);
 		p1.changeAge (age);
+		// change person2 to name Jill and age 21
+		p2.changeName (name);
+		p2.changeAge (age);
 		//Print changes
 		System.out.println ("\nInside changePeople... Changed values...");
 		System.out.println ("person1: " + p1);
