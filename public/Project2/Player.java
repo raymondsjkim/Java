@@ -49,25 +49,26 @@ class Player
       	bet = scan.nextInt();
       	if (bet >= 1 && bet <= 100) {
       		money = money - bet;
-      	
       		Wheel.betOptions();
       		System.out.print("What is your bet type? ");
       		betType = scan.nextInt();
-      		
-      		if(betType == Wheel.NUMBER) {
-      			boolean x = true;
-      			System.out.print("Choose another between 1 and 10? ");
-      			number = scan.nextInt();
-      			
-      			while(x) {
-          			if(number >= Wheel.MIN_NUM && number <= Wheel.MAX_NUM) {
-          				x = false;
-          			}  else {
-              			System.out.print("Choose another between 1 and 10? ");
-              			number = scan.nextInt();
-          			}    				
-      			}
-      		}
+      		if (betType >= 1 && betType <= 3) {      			
+          		if(betType == Wheel.NUMBER) {
+          			boolean x = true;        			
+          			System.out.print("Choose another between 1 and 10? ");
+          			number = scan.nextInt();         			
+          			while(x) {            			
+          				if(number >= Wheel.MIN_NUM && number <= Wheel.MAX_NUM) {
+              				x = false;
+              			}  else {
+                  			System.out.print("Choose another between 1 and 10? ");
+                  			number = scan.nextInt();
+              			}    				          		
+          			}     
+//          			Wheel.payOff(bet, betType, number);
+          			System.out.println(Wheel.payOff(bet, betType, number));
+          		}
+      		} 
       	} else {
       		System.out.println("ERROR: you do not have sufficient funds.");
       	}
