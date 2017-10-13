@@ -1,3 +1,4 @@
+
 // Class Roullete for CSCI 145 Project 2 Fall 17
 // Modified by:
 
@@ -26,8 +27,9 @@ class Roulette
                  	+ ": " + player1.getMoney());
          	
          	player1.makeBet(scan);
-         	
-
+         	System.out.println();
+         	Wheel.spin(); // call spin
+         	System.out.println();
          	done = !player1.playAgain(scan);
          	System.out.println();
       	}
