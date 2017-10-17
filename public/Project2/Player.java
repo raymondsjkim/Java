@@ -89,7 +89,7 @@ class Player
     public void payment() {
     		winnings = Wheel.payOff(bet, betType, number);
     		money = money + winnings; // add winnings to money amount
-    		System.out.println("You won $" + winnings + "\nYour balance is $" + money);
+    		System.out.println(" won $" + winnings + ". Balance: $" + money);
     		if(money <= 0) {
     			money = RELOAD_AMOUNT;
     		}
