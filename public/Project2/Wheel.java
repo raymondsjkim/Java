@@ -50,7 +50,6 @@ class Wheel
       	System.out.println("    2. Bet on red (odd numbers)");
       	System.out.println("    3. Bet on a number between " + MIN_NUM +
       			" and " + MAX_NUM);
-      	System.out.println();
     }
     //=====================================================================
     //  Spin position
