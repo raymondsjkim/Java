@@ -1,9 +1,3 @@
-//********************************************************************
-//  RationalTester.java       Author: Lewis/Loftus
-//
-//  Driver to exercise the use of multiple Rational objects.
-//********************************************************************
-
 public class RationalTester
 {
     //-----------------------------------------------------------------
