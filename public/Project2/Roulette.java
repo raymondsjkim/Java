@@ -19,36 +19,38 @@ class Roulette
       	Scanner scan = new Scanner(System.in);
       	Player player1 = new Player ("Jane", 100);   // $100 to start for Jane
       	Player player2 = new Player ("Ray", 100);
+      	boolean b1 = false;
       	boolean done = false;
-      	boolean b1 = true;
-      	boolean b2 = true;
       	
       	System.out.println ("Author: your Raymond Kim");
       	Wheel.welcomeMessage();
 
       	while (!done)
       	{
-//      		if(b1) {
-//      			
-//      		}
          	System.out.println ("Money available for " + player1.getName()
                  	+ ": " + player1.getMoney());
-         
-         	System.out.println();
-         	
          	player1.makeBet(scan); // call makeBet method
+         	System.out.println();
+         	System.out.println ("Money available for " + player2.getName()
+         	+ ": " + player2.getMoney());
+         	player2.makeBet(scan); // call makeBet method
          	
          	System.out.println();
          	Wheel.spin(); // call spin
+         	System.out.println();
          	
-         	
+         	System.out.print(player1.getName());
          	player1.payment();
+         	System.out.print(player2.getName());
+         	player2.payment();
          	System.out.println();
-         	done = !player1.playAgain(scan);
+         	done = !player2.playAgain(scan);
          	System.out.println();
+
       	}
       	
       	System.out.println(player1.displayStatus());
+      	System.out.println(player2.displayStatus());
       	System.out.println();
       	System.out.println ("Game over!  Thanks for playing.");
       	scan.close();
