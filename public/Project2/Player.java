@@ -1,8 +1,6 @@
 // Class Player for CSCI 145 Project 2 Fall 17
 // Modified by: Raymond Kim
-
 import java.util.*;
-
 //************************************************************************
 //   Class Player represents one roulette player.
 //************************************************************************
@@ -11,7 +9,6 @@ class Player
 	private static final int RELOAD_AMOUNT = 100;
     private int bet, money, betType, number, winnings, betNet;
     private String name;
-
     //=====================================================================
     //  The Player constructor sets up  name and initial available money.
     //=====================================================================
@@ -20,8 +17,6 @@ class Player
 		name = playerName;
       	money = initialMoney;
    	} // constructor Player
-
-
     //=====================================================================
     //  Returns this player's name.
     //=====================================================================
@@ -29,8 +24,6 @@ class Player
     {
       	return name;
     }  // method getName
-
-
     //=====================================================================
     //  Returns this player's current available money.
     //=====================================================================
@@ -38,8 +31,6 @@ class Player
     {
       	return money;
     }  // method getMoney
-
-
     //=====================================================================
     //  Prompts the user and reads betting information.
     //=====================================================================
