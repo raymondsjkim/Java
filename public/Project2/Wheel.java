@@ -1,8 +1,6 @@
 // Class Wheel for CSCI 145 Project 2 Fall 17
 // Modified by: Raymond Kim
-
 import java.util.Random;
-
 //************************************************************************
 //   Class Wheel represents a roulette wheel and its operations.  Its
 //   data and methods are static because there is only one wheel.
@@ -16,16 +14,13 @@ class Wheel
     public final static int NUMBER    =  3;			// number bet
     public final static int MIN_NUM   =  1;			// smallest number to bet
     public final static int MAX_NUM   = 10;			// largest number to bet
-    
     // private name constants -- internal use only
     private final static int MAX_POSITIONS = 12;	// number of positions on wheel
     private final static int NUMBER_PAYOFF = 10;	// payoff for number bet
-    private final static int COLOR_PAYOFF  = 2;		// payoff for color bet
-
+    private final static int COLOR_PAYOFF  = 2;	// payoff for color bet
     // private variables -- internal use only
     private static int ballPosition;				// 00, 0, 1 .. 10
-    private static int color;						// GREEN, RED, OR BLACK
-
+    private static int color;					// GREEN, RED, OR BLACK
     //=====================================================================
     //  Presents welcome message
     //=====================================================================
@@ -38,8 +33,6 @@ class Wheel
       	System.out.println("You can bet on a number from " + MIN_NUM + " to " + MAX_NUM + ".");
       	System.out.println("Gamble responsibly.  Have fun and good luck!\n");
     }
-
-
     //=====================================================================
     //  Presents betting options
     //=====================================================================
@@ -57,7 +50,6 @@ class Wheel
     public static void spin() {
     		Random rand = new Random();
     		int ballPosition = rand.nextInt(MAX_POSITIONS) + 1; // random number between 1 and 12
-    		
     		if(ballPosition == 11 || ballPosition == 12) {
 	    		color = GREEN;
 	    	} else if((ballPosition % 2) == 0) {
