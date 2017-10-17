@@ -25,7 +25,6 @@ class Wheel
     // private variables -- internal use only
     private static int ballPosition;				// 00, 0, 1 .. 10
     private static int color;						// GREEN, RED, OR BLACK
-    static int wheelNum;
 
     //=====================================================================
     //  Presents welcome message
@@ -58,29 +57,28 @@ class Wheel
     //=====================================================================
     public static void spin() {
     		Random rand = new Random();
-    		String color = "";
-    		int randNum = rand.nextInt(MAX_POSITIONS) + 1; // random number between 1 and 12
-    		wheelNum = randNum;
-	    	if(randNum == 11 || randNum == 12) {
-	    		ballPosition = GREEN; // 00 OR 0
-	    		color = "Green";
-	    	} else if((randNum % 2) == 0) {
-	    		ballPosition = BLACK; // even numbers
-	    		color = "Black";
-	    	} else if ((randNum % 2) == 1) {
-	    		ballPosition = RED; // odd numbers
-	    		color = "Red";
+    		int ballPosition = rand.nextInt(MAX_POSITIONS) + 1; // random number between 1 and 12
+    		
+    		if(ballPosition == 11 || ballPosition == 12) {
+	    		color = GREEN;
+	    	} else if((ballPosition % 2) == 0) {
+	    		color = BLACK;
+	    	} else if ((ballPosition % 2) == 1) {
+	    		color = RED;
 	    	}
-    		System.out.println("The ball position is at " + randNum + " and the color is " + color);
+    		System.out.println("The color is " + ((color < 1) ? "Black" : "Red") + " and the ball position is at " + ballPosition);
     }
-    public static int payOff(int betAmount, int typeOfBet, int numBet) {
-    		int amountWon = 0;
-    		if(wheelNum == 11 || wheelNum == 12) {
-    			amountWon = 0;
-    		} else if (wheelNum == numBet) {
-    			amountWon = betAmount * 10;
+    public static int payOff(int amtBet, int typeBet, int numBet) {
+    		if(color == GREEN) {
+    			return 0;
+    		} else if(typeBet == 1 && color == BLACK) {
+    			return amtBet * COLOR_PAYOFF;
+    		} else if(typeBet == 2 && color == RED) {
+    			return amtBet * COLOR_PAYOFF;
+    		} else if(typeBet == 3 && numBet == ballPosition) {
+    			return amtBet * NUMBER_PAYOFF;
+    		} else {
+    			return 0;
     		}
-    		return amountWon;
     }
-    
 }
