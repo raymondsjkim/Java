@@ -9,7 +9,7 @@ import java.util.*;
 class Player
 {
 	private static final int RELOAD_AMOUNT = 100;
-    private int bet, money, betType, number;
+    private int bet, money, betType, number, winnings, betNet;
     private String name;
 
     //=====================================================================
@@ -53,37 +53,63 @@ class Player
       		System.out.print("What is your bet type? ");
       		betType = scan.nextInt();
       		if (betType >= 1 && betType <= 3) {      			
-          		if(betType == Wheel.NUMBER) {
-          			boolean x = true;        			
-          			System.out.print("Choose another between 1 and 10? ");
+      			if(betType == Wheel.NUMBER) {
+      				boolean x = true;        			
+      				System.out.print("Choose a number between 1 and 10? ");
           			number = scan.nextInt();         			
           			while(x) {            			
           				if(number >= Wheel.MIN_NUM && number <= Wheel.MAX_NUM) {
               				x = false;
               			}  else {
-                  			System.out.print("Choose another between 1 and 10? ");
+                  			System.out.print("Choose a number between 1 and 10? ");
                   			number = scan.nextInt();
               			}    				          		
           			}     
-//          			Wheel.payOff(bet, betType, number);
-          			System.out.println(Wheel.payOff(bet, betType, number));
           		}
+      		} else {
+      			System.out.println("Invalid input: Please play again.");
       		} 
       	} else {
       		System.out.println("ERROR: you do not have sufficient funds.");
       	}
     } // method makeBet
-
-
     //=====================================================================
     //  Determines if the player wants to play again.
     //=====================================================================
     public boolean playAgain(Scanner scan)
     {
-      	String answer;
-
+    		String answer;
       	System.out.print ("Play again [y/n]? ");
       	answer = scan.next();
       	return (answer.equals("y") || answer.equals("Y"));
     }  // method playAgain
+    //=====================================================================
+    //  Determines the winnings and reloads amount if balance is 0
+    //=====================================================================
+    public void payment() {
+    		winnings = Wheel.payOff(bet, betType, number);
+    		money = money + winnings; // add winnings to money amount
+    		System.out.println("You won $" + winnings + "\nYour balance is $" + money);
+    		if(money <= 0) {
+    			money = RELOAD_AMOUNT;
+    		}
+        if(winnings > 0) {
+                betNet = betNet + (winnings-bet);
+        } else {
+                betNet = betNet - bet;
+        }
+    }
+    //=====================================================================
+    //  Display total winning or losing amount after play is done with game.
+    //=====================================================================
+    public String displayStatus() {
+        if(betNet>=0)
+        {
+        		return getName() + "'s total winning is $" + betNet;
+        }
+        else
+        {
+        		return getName() + "'s total losing is -$" + (-(betNet));
+        }
+    }
 }
