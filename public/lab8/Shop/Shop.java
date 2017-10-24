@@ -1,3 +1,14 @@
+/*  
+  	Program: A Shopping cart
+    Author: Raymond Kim
+    Class: CSCI 145
+    Date: 10/124/2017
+    Description: This program simulates a shopping cart
+    where a user can enter an item, price, and quantity
+    and displays a shopping cart with the description
+    and calculation for the total price.
+	Exception(s): N/A
+*/
 import java.util.Scanner;
 import java.text.NumberFormat;
 public class Shop {
