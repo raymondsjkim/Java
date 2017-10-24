@@ -9,7 +9,6 @@ public class Item
 	private String name;
 	private double price;
 	private int quantity;
-	
 	// ----------------------------------------------------- --
 	// Create a new item with the given attributes.
 	// ----------------------------------------------------- --
@@ -19,7 +18,6 @@ public class Item
 		price = itemPrice;
 		quantity = numPurchased;
 	}
-	
 	// ----------------------------------------------------- --
 	// Return a string with the information about the item
 	// ----------------------------------------------------- --
@@ -29,7 +27,6 @@ public class Item
 		return (name + "\t" + fmt.format(price) + "\t\t" + quantity + "\t\t"
 		 + fmt.format(price*quantity));
 	}
-	
 	// -----------------------------------------------
 	// Returns the unit price of the item
 	// -----------------------------------------------
@@ -37,7 +34,6 @@ public class Item
 	{
 		return price;
 	}
-	
 	// -----------------------------------------------
 	// Returns the name of the item
 	// -----------------------------------------------
@@ -53,14 +49,3 @@ public class Item
 		return quantity; 
 	}
 } 
-
-
-
-
-
-
-
-
-
-
-
