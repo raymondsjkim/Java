@@ -11,7 +11,6 @@ public class ShoppingCart
 	private double totalPrice; // total price of items in the cart
 	private int capacity; // current cart capacity
 	private Item[] cart;
-	
 	// ---------------------------------------------------------
 	// Creates an empty shopping cart with a capacity of 5 items.
 	// ---------------------------------------------------------
@@ -22,7 +21,6 @@ public class ShoppingCart
 		totalPrice = 0.0;
 		cart = new Item[capacity];
 	}
-	
 	// -----------------------------------------------------
 	// Adds an item to the shopping cart.
 	// -----------------------------------------------------
@@ -36,7 +34,6 @@ public class ShoppingCart
 		totalPrice = totalPrice + price;
 		itemCount++;
 	}
-	
 	// -----------------------------------------------------
 	// Returns the contents of the cart together with
 	// summary information.
@@ -48,12 +45,9 @@ public class ShoppingCart
 		contents += "\nItem\tUnit Price\tQuantity\tTotal\n";
 		for (int i = 0; i < itemCount; i++) {
 			contents += cart[i].toString() + "\n";
-			contents += "\nTotal Price: " + fmt.format(totalPrice);
-			contents += "\n";
 		}
 		return contents;
 	}
-	
 	//-----------------------------------------------------
 	//Increases the capacity of the shopping cart by 3
 	//-----------------------------------------------------
@@ -65,11 +59,4 @@ public class ShoppingCart
 		}
 		cart = temp;
 	}
-    public boolean shopAgain(Scanner scan)
-    {
-    	String answer;
-      	System.out.print ("Shop again [y/n]? ");
-      	answer = scan.next();
-      	return (answer.equals("y") || answer.equals("Y"));
-    }  // method playAgain
 } 
