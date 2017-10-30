@@ -24,10 +24,11 @@ public class ReverseArray {
 		// reverse the array and print
 	    	for(int i = 0; i < list.length / 2; i++)
 	    	{
-	    	    int temp = list[i];
+	    	    int temp = list[i]; // first half indexes of list
+	    	    // make last index of list the first
 	    	    list[i] = list[list.length - i - 1];
+	    	    // make first index if list the last
 	    	    list[list.length - i - 1] = temp;
-	    	  
 	    	}
 	    	System.out.print("Reversed values: ");
 	    	for(int item : list) {
