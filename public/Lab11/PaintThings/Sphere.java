@@ -1,18 +1,34 @@
+//*****************************************
+//  Sphere.java
+//
+//  Represents a sphere.
+//*****************************************
+public class Sphere extends Shape
+{
+    private double radius;  //radius in feet
 
-public class Rectangle extends Shape {
-	public double length, width;
-	
-	public Rectangle(double length, double width) {
-		super("Rectangle");
-		this.length = length;
-		this.width = width;
-	}
-	
-	public double area() {
-		return length * width;
-	}
+   //----------------------------------
+   //  Constructor: Sets up the sphere.
+   //----------------------------------
+   public Sphere(double r)
+   {  
+      super("Sphere");
+      radius = r;
+   }
 
-	public String toString() {
-	       return super.toString();
-	}
+   //  Returns the surface area of the sphere.
+   //-----------------------------------------
+   public double area()
+   {
+       return 4*Math.PI*radius*radius;
+   }
+
+   //-----------------------------------
+   //  Returns the sphere as a String.
+   //----------------------------------- 
+   public String toString()
+   {
+       return super.toString() + " of radius " + radius;
+   }
+
 }
