@@ -1,3 +1,4 @@
+Chapter 12 Exercises
 12.1 An identifier is a letter, underscore, or dollar.  An identifier is also an identifier 
 followed by a letter, digit, underscore, or dollar sign.
 
@@ -19,3 +20,35 @@ public static int sum(int num) {
 	}
 	return result;
 }
+
+Programming Project
+12.2 
+// ************************************************************
+// DivisorCalc.java
+// ************************************************************
+public class DivisorCalc {
+	 public int gcd (int num1, int num2) {
+		 if (num2 <= num1 && num1 % num2 == 0) {
+			 return num2;
+		 } else {
+			 if (num1 < num2) {
+				 return gcd (num2, num1);
+			 } else {
+				 return gcd (num2, num1 % num2);
+			 }
+		}
+	 }
+}
+// ************************************************************
+// Euclid.java
+// ************************************************************
+public class Euclid {
+	public static void main (String[] argv) {
+		 int num1 = 792;
+		 int num2 = 348;
+		 DivisorCalc euclid = new DivisorCalc();
+		 
+		 System.out.println("The gcd of " + num1 + " and " + num2 + " is: " + euclid.gcd (num1, num2));
+	}
+} 
+
