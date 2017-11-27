@@ -1,2 +1,6 @@
 12.1 An identifier is a letter, underscore, or dollar.  An identifier is also an identifier 
 followed by a letter, digit, underscore, or dollar sign.
+
+12.2 N(y) = N(y-1) * x; N(0) = 1;
+
+12.3 M(i) = M(i-1) + j; M(0) = 0;
