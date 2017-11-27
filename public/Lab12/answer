@@ -1,0 +1,5 @@
+Attemping to divide by zero, an array index that is out of bounds,
+a specific file that could not be found, a requested I/O operation
+that could not be completed normally, an attempt was made to follow
+a null reference, and an attempt that was made to execute an operation
+that violates some kind of security measure.
